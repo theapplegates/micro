@@ -4,9 +4,33 @@ import { SITE_TITLE } from '../config';
 ---
 
 <header>
+<!-- Before the closing </head> -->
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css"
+/>
+<!-- Before the closing </body> -->
+<script src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js"></script>
+<script>
+  docsearch({
+	// Your Search API Key
+	apiKey: '711ee70958a27da7849c29cb88184780',
+	// The index populated by the DocSearch scraper
+	indexName: 'micro',
+	// Your Algolia Application ID
+	appId: 'VGP13YDFST',
+	// Replace inputSelector with a CSS selector
+	// matching your search input
+	inputSelector: 'div#microsearch',
+	// Set debug to true to inspect the dropdown
+	debug: false,
+  });
+</script>
+
 	<h2>
 		{SITE_TITLE}
 	</h2>
+	<div id="microsearch"></div>
 	<nav>
 		<HeaderLink href="/">Home</HeaderLink>
 		<HeaderLink href="/blog">Blog</HeaderLink>
