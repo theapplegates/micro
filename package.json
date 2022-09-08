@@ -17,6 +17,6 @@
     "astro-imagetools": "^0.6.10"
   },
   "devDependencies": {
-    "@astrojs/image": "^0.5.0"
+    "@astrojs/image": "^0.6.0"
   }
 }
