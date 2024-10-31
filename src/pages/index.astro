@@ -1,0 +1,57 @@
+---
+import { getCollection } from "astro:content";
+import Layout from "../layouts/Layout.astro";
+import { Image } from "astro:assets";
+import { format } from "date-fns";
+import Tags from "../components/Tags";
+
+const posts = (await getCollection("blog")).sort(
+  (a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime()
+);
+---
+
+<Layout>
+  <section>
+    <ul class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      {
+        posts.map(post => {
+          const { title, date, imageURL, summary, tags } = post.data;
+          return (
+            <li>
+              <a
+                href={`/${post.slug}/`}
+                class="relative inline-block aspect-video w-full overflow-hidden rounded-md"
+              >
+                <Image
+                  width={720}
+                  height={360}
+                  transition:name={title}
+                  loading="eager"
+                  src={imageURL}
+                  alt={`${title} cover pic`}
+                  class="absolute h-full w-full object-cover transition-transform hover:scale-110"
+                />
+              </a>
+
+              <div class="my-2 flex items-center justify-between">
+                <Tags list={tags} />
+
+                <time class="shrink-0 text-sm text-gray-500">
+                  {format(new Date(date), "dd, LLL uuuu")}
+                </time>
+              </div>
+
+              <a href={`/${post.slug}/`}>
+                <h4 class="font-secondary text-2xl transition-colors hover:text-primary">
+                  {title}
+                </h4>
+              </a>
+
+              <p class="text-gray-500">{summary}</p>
+            </li>
+          );
+        })
+      }
+    </ul>
+  </section>
+</Layout>

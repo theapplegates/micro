@@ -1,0 +1,31 @@
+---
+import HeaderLink from "./HeaderLink.astro";
+import { SITE } from "../consts";
+---
+
+<header class="fixed left-0 top-0 z-50 w-full bg-background shadow-md">
+  <nav class="container">
+    <h2><a href="/" class="font-secondary text-xl">{SITE.title}</a></h2>
+    <div>
+      <HeaderLink href="/">Blog</HeaderLink>
+      <HeaderLink href="/about">About</HeaderLink>
+    </div>
+  </nav>
+</header>
+
+<style>
+  h2 a,
+  h2 a.active {
+    text-decoration: none;
+  }
+  nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  nav a {
+    padding: 1em 0.5em;
+    text-decoration: none;
+  }
+</style>

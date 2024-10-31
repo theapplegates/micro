@@ -1,0 +1,92 @@
+---
+title: 5 Design principles i use to create website
+date: 2024-09-16
+summary: Design principles i use to create website for good web-experience
+imageURL: /blog/5-design-principles/cover-pic.png
+tags:
+  - Design
+---
+
+import H2 from "../../components/MDXComponents/H2";
+
+Hi there👋, today i'll explain the Design principles & tricks which i use to create website, so you can also build website which gives good browsing experience for your users.
+
+> A good design simplifies the development process
+
+<H2>Use less colors</H2>
+
+You can build entire website by just using these <mark>3 colors</mark>, even my blog was build with same logic
+
+- **Brand color** (use your brand-color for popup elements like buttons, links etc)
+- **Background color** (choose between black or white, else lightest or darkest shade of your brand-color)
+- **Font color** (choose the opposite color of your background color)
+
+> Less colors = more consistancy
+
+import { CldImage } from 'astro-cloudinary';
+
+
+
+
+
+
+
+
+Here are few tools to visualize you website with different colors & check the contrast ratio using
+
+- [Real time colors](https://www.realtimecolors.com/?colors=050315-fbfbfe-2f27ce-dedcff-433bff&fonts=Inter-Inter)
+- [Shadcn Themes](https://ui.shadcn.com/themes)
+- [RadixUI Themes](https://www.radix-ui.com/themes/playground)
+- [Contrast checker](https://coolors.co/contrast-checker/112a46-acc8e5)
+
+<H2>2 Typefaces</H2>
+
+Generally we go crazy🤯 in this part using multiple font-families, but **2 font-families are enough for a website**, their are 2 categories in this font-family:
+
+- **Display fonts** (the font which is used for headings, highlighting, etc)
+- **Normal fonts** (the font which is used for body text)
+
+Even my blog website is build on 2 font families
+
+- [Virgil](https://virgil.excalidraw.com/)
+- [Inter](https://fonts.google.com/specimen/Inter?query=inter)
+
+**Bonus**
+
+- Limit the sentence maximum width to **40 - 60 Characters** to increase readability
+- This is a niche case, check for readability of letter **i,j** some font-families generally don't have difference between these letters
+
+<H2>Single Icon Library</H2>
+
+We can't skip using icons in our website, in this process we'll use icons from different providers, this can mess-up the website consistancy because we'll use 2-3 different styles at once it'll look odd
+
+![Icons usage](/blog/5-design-principles/icon-usage.png)
+
+Maximum try to use single icon-library, here are few icon libraries i use the most
+
+- [Heroicons](https://heroicons.com/)
+- [Lucid icons](https://lucide.dev/icons/)
+- [RadixUI icons](https://www.radix-ui.com/icons)
+
+<H2>Visual Hierarchy with colors & sizes</H2>
+
+You can change the importance of every element by using the colors & sizes, if you've 2 paragraphs you can change the importance of text just by adding gray color here is an example👇
+
+![Visual hierarchy](/blog/5-design-principles/readability.png)
+
+Here i've made the heading bold & increased the font size so it grabs more attention, & next i've made the text gray to decrease it's importance
+
+> In life we've limited amount of fucks, so choose them wisely
+
+Everything doensn't need user attention, with visual hierarchy you can create a path for user to navigate
+
+<H2>Accessibility</H2>
+
+The most underrated & igonered one, even i too skip this most of the times, a good design must be accessible for all, here are few common use cases
+
+- Form auto-submission on-press of <kbd>Enter</kbd> key
+- Accessing all actionable-items(example: Buttons, Links) with tab key
+
+You can learn more on [MDN Docs](https://developer.mozilla.org/en-US/docs/Web/Accessibility)
+
+That's it for this blog, thanks for making it till here, my goal is one quality post per week. Stay tuned peace✌️

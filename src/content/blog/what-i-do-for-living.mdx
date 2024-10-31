@@ -1,0 +1,115 @@
+---
+title: What i do for living
+date: 2024-10-05
+summary: Seek peek into ContentQL
+imageURL: /blog/what-i-do-for-living/cover-pic.avif
+tags:
+  - Life
+---
+
+import H2 from "../../components/MDXComponents/H2";
+
+Hi there👋, I'm Pavan Bhaskar the creator behind this blog. As you can guess, I'm a 🌐 Web Developer and i create website's for living. My goal is to create websites to provide good web-experience for 👥humans
+
+I'm currently working at ContentQL as a Full-Stack Developer, and I'm excited to share with you what we're building there!
+
+<H2>ContentQL</H2>
+
+Managing content is a pain in the ass🙃. So, how does ContentQL help you manage content easily? we create websites that give you more control over your website content👇
+
+- Entire website content is editable ✅
+- Comes with access-control 🚨, you can restrict who can do what!
+- Comes with variety of themes 💫
+
+Learn more about ContentQL here👇
+
+<iframe
+  src="https://www.youtube.com/embed/uOGmj7RWZWY?si=MniDIeBXNLRqJrb1"
+  style={{ height: "30rem", borderRadius: "0.5rem", width: "100%" }}
+  title="ContentQL video"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+  referrerPolicy="strict-origin-when-cross-origin"
+  allowfullscreen
+/>
+
+So what's next? Sign up for a free account at [ContentQL](https://contentql.io), we've a great free-tier to start. I've been working on a theme hand-crafted for your blog-website it's launching soon🎊! stay tuned
+
+<H2>Under the hood</H2>
+
+![Under the hood](/blog/what-i-do-for-living/under-the-hood.avif)
+
+We're using NextJS for the frontend & PayloadCMS as our backend. These two things open doors for lot of possibilities. Now I'll share how we're leveraging PayloadCMS features!
+
+<H2>Payload CMS</H2>
+
+Before understanding what's PayloadCMS, let's understand what is CMS.
+
+CMS -> Content Management System, you'll get admin interface where you can monitor or control few aspects of your website, here are few CMS examples: WordPress, ContentFul etc...
+
+Unlike WordPress, ContentFul or Sanity, PayloadCMS integrates with your NextJS App-router so when you deploy your app your admin panel also gets hosted at /admin route
+
+**Features**
+
+- Comes with good Admin-panel UI
+- You can use both sql & no-sql databases
+- Comes with Access Control
+- Automatic type generation🔥
+
+I'll demonstrate one small example of Payload schema VS Traditional MongoDB schema👇
+
+```typescript title="usersSchema.ts"
+import { Schema } from "mongoose";
+
+// So here we've traditional MongoDB schema
+export const userSchema = new Schema(
+  {
+    name: { type: String, required: true, lowercase: true, trim: true },
+    age: { type: Number, required: true },
+  },
+  {
+    timestamps: true,
+  }
+);
+```
+
+Payload schema👇, here we generally call schema as collections
+
+```typescript title="usersCollection.ts"
+import type { CollectionConfig } from "payload";
+
+// So here we're mapping the fields to payload schema
+export const Users: CollectionConfig = {
+  slug: "users",
+  fields: [
+    {
+      name: "name",
+      label: "Name",
+      type: "text",
+    },
+    {
+      name: "age",
+      label: "Age",
+      type: "number",
+    },
+  ],
+};
+```
+
+so you need to add this collection to you **payload.config.ts** file, you'll have a collection on your admin panel.
+
+Learn more about payload here👇
+
+<iframe
+  style={{ height: "30rem", borderRadius: "0.5rem", width: "100%" }}
+  src="https://www.youtube.com/embed/In_lFhzmbME?si=iGcyDESvMJ5zW3CX"
+  title="PayloadCMS video"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+  referrerPolicy="strict-origin-when-cross-origin"
+  allowfullscreen
+/>
+
+<H2>Tailwind CSS 💅</H2>
+
+For styling different themes we're using Tailwind CSS, Theming is quite easy in tailwind & by default comes with a good design-system. Tailwind typography-plugin is dope for blog-page styling. Learn more about [Tailwind CSS](https://tailwindcss.com/)
+
+And that's it for this blog, thanks for reading this far, stay tuned for more updates peace✌️

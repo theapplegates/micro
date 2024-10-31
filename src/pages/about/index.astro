@@ -1,0 +1,78 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Image from "astro/components/Image.astro";
+---
+
+<Layout title="About">
+  <section>
+    <div class="mx-auto max-w-4xl md:flex md:gap-4">
+      <Image
+        height={500}
+        width={500}
+        loading="eager"
+        alt="Pavan Bhaskar photo"
+        src="/profile-pic.png"
+        class="aspect-square size-20 overflow-hidden rounded-full bg-slate-500 object-cover"
+      />
+
+      <div
+        class="mt-4 text-lg [&_a]:text-primary [&_a]:underline [&_a]:after:content-['↗']"
+      >
+        <h1 class="font-secondary text-4xl">Pavan Bhaskar</h1>
+        <p class="max-w-[60ch] text-gray-500">
+          Building & Helping brands to bring their ideas to life❤️, together
+          let's build great things. No nonsense, always on cutting-edge. 🌍
+          Based in <strong class="text-text">Bhimavaram, India</strong>.
+        </p>
+
+        <p class="mt-6">Currently</p>
+        <p class="text-gray-500">
+          Developing & Designing at <a
+            href="https://contentql.io"
+            class=""
+            target="_blank">ContentQL</a
+          >
+        </p>
+
+        <p class="mt-6">Previously</p>
+        <p class="text-gray-500">
+          <strong class="text-text">Netenrich</strong> · Frontend Developer
+        </p>
+
+        <p class="mt-6">Elsewhere</p>
+        <div class="flex flex-wrap gap-x-6">
+          <a href="https://pavanbhaskar.com" target="_blank">Website</a>
+
+          <a
+            href="https://github.com/pavanbhaskardev"
+            class="text-primary underline hover:text-primary/80"
+            target="_blank"
+          >
+            Github
+          </a>
+          <a
+            href="https://twitter.com/pavanbhaskar234"
+            class="text-primary underline hover:text-primary/80"
+            target="_blank"
+          >
+            Twitter
+          </a>
+          <a
+            href="https://www.linkedin.com/in/pavan-bhaskar-challa-4a2774244/"
+            class="text-primary underline hover:text-primary/80"
+            target="_blank"
+          >
+            LinkedIn
+          </a>
+          <a
+            href="https://www.instagram.com/pavan_bhaskar_ch/"
+            class="text-primary underline hover:text-primary/80"
+            target="_blank"
+          >
+            Instagram
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>

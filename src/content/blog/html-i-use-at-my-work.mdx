@@ -1,0 +1,108 @@
+---
+title: HTML i use at my work💻
+date: 2024-08-30
+summary: HTML elements which i use the often at my work and in my personal projects
+imageURL: /blog/html-i-use-at-work.gif
+tags:
+  - HTML
+---
+
+import H2 from "../../components/MDXComponents/H2";
+
+Hi there, i planned to write this blog long back but i stuck with a TypeScript warning, anyways let's start today topic i've divided the HTML elements into categories & it will be easy to understand
+
+- Typography
+- Layout
+- Embeddings
+- Elements
+
+<H2>Typography</H2>
+
+If you're familiar with any text editor like MS Word, Powerpoint, Google Docs you already know this🎉
+
+![Google Docs editor image](/blog/html-typography.png)
+
+it's just text with different sizes, i use these HTML elements **h1, h2, h3, p, a, strong**
+
+```tsx
+// basic syntax of these elements
+
+<h1>Hello World</h1>
+<h2>Hello World</h2>
+<h3>Hello World</h3>
+<p>This is a paragraph</p>
+<a href="https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/HTML_text_fundamentals">MDN Docs</a>
+<strong>I'm bold</strong>
+```
+
+Preview of the elements👇
+
+# Hello World
+
+## Hello World
+
+### Hello World
+
+This is a paragraph
+
+[MDN Docs](https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/HTML_text_fundamentals)
+
+**I'm bold**
+
+<H2>Layout</H2>
+
+Every website consists of blocks like navigation, main content & footer section these HTML elements **div, section, header, footer, main, aside** will provide more structure to your website, this picture can explain you more👇
+
+![website layout image](/blog/html-layout.png)
+
+```tsx
+// basic syntax of these layout elements
+<header>Header</header> // mostly used for navigation
+<aside>Slider</aside> // used for sidebar
+<main>Content</main> // you website main content lives here
+<footer>Footer</footer> // bottom most element of website, generally most people mention there social links here
+
+// these tags are mostly used for grouping elements
+<div>
+    <button>Get started</button>
+</div>
+
+<section>
+    <h1>Hello there</h1>
+    <p>My name is pavan</p>
+</section>
+```
+
+Using these elements can contribute for better structure & even help in increasing Accessibility & SEO
+
+<H2>Embeddings</H2>
+
+You can go crazy here, you can literally run a website inside you're HTML file you just need the website URL, attach the website url to you're **iframe** element and i'll automatically render the website 💥boom done. Here is an example👇
+
+```tsx
+// This will render youtube inside your HTML file
+<iframe src="https://youtube.com"></iframe>
+```
+
+Here i rendered a <mark>3D modal</mark> using <mark>Spline-3D</mark>
+
+<iframe
+  src="https://my.spline.design/molang3dcopy-e322e2236e97835094662d0d17977cda/"
+  width="100%"
+  height="100%"
+  style={{ height: "30rem", borderRadius: "0.5rem" }}
+/>
+
+<H2>Elements</H2>
+
+I came to know few HTML elements recently like **time** which can be used for displaying date & time, this can increase your SEO here is an example👇
+
+```tsx
+<time datetime="2018-07-07">July 7</time>
+```
+
+You can follow these resources to learn HTML
+[MDN Docs](https://developer.mozilla.org/en-US/docs/Web/HTML/Element),
+[W3 Schools](https://www.w3schools.com/html/default.asp)
+
+And that's it for this blog, thanks for making it till here, next blog is going to be interesting topic on **CSS** stay tuned, peace✌️

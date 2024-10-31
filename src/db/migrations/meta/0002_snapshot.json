@@ -1,0 +1,46 @@
+{
+  "id": "eb381fe1-37b6-4c16-b567-e3deadc28987",
+  "prevId": "372141a3-c70c-4519-8c81-86ccef66530a",
+  "version": "7",
+  "dialect": "postgresql",
+  "tables": {
+    "public.viewCount": {
+      "name": "viewCount",
+      "schema": "",
+      "columns": {
+        "slug": {
+          "name": "slug",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "views": {
+          "name": "views",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {},
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {
+        "viewCount_slug_unique": {
+          "name": "viewCount_slug_unique",
+          "nullsNotDistinct": false,
+          "columns": [
+            "slug"
+          ]
+        }
+      }
+    }
+  },
+  "enums": {},
+  "schemas": {},
+  "sequences": {},
+  "_meta": {
+    "columns": {},
+    "schemas": {},
+    "tables": {}
+  }
+}

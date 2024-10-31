@@ -1,0 +1,1 @@
+ALTER TABLE "viewCount" ADD CONSTRAINT "viewCount_slug_unique" UNIQUE("slug");

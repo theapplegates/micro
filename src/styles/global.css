@@ -1,0 +1,87 @@
+/*
+  The CSS in this style tag is based off of Bear Blog's default CSS.
+  https://github.com/HermanMartinus/bearblog/blob/297026a877bc2ab2b3bdfbd6b9f7961c350917dd/templates/styles/blog/default.css
+  License MIT: https://github.com/HermanMartinus/bearblog/blob/master/LICENSE.md
+ */
+
+/* https://www.realtimecolors.com/?colors=0c0a09-f5f5f4-f59f0a-56534e-443dff&fonts=Inter%20Tight-Inter */
+/* --text: #0c0a09;
+--background: #f5f5f4;
+--primary: #f59f0a;
+--primary-light: #d97706;
+--secondary: #56534e;
+ */
+
+@tailwind base;
+@tailwind utilities;
+@tailwind components;
+
+@layer base {
+  :root {
+    --primary: 32 95 44;
+    --background: 60 5 96;
+    --text: 20 14 4;
+  }
+
+  @font-face {
+    font-family: "Virgil";
+    font-style: normal;
+    font-weight: normal;
+    src: url(/fonts/Virgil.ttf) format("truetype");
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "Geist";
+    font-style: normal;
+    font-weight: 400;
+    src: url(/fonts/Geist-Regular.otf) format("otf");
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "GeistMono";
+    font-style: normal;
+    font-weight: 400;
+    src: url(/fonts/GeistMono-Regular.woff2) format("woff2");
+    font-display: swap;
+  }
+
+  html {
+    @apply scroll-m-20 overflow-auto scroll-smooth bg-background text-text selection:bg-primary selection:text-background;
+  }
+
+  body {
+    @apply font-sans;
+  }
+}
+
+@layer utilities {
+  .tag {
+    @apply rounded-md bg-primary/15 px-2 py-1 text-sm text-primary;
+  }
+}
+
+.dot {
+  opacity: 0;
+  animation: dot-blink 1.4s infinite ease-in-out both;
+}
+
+.dot:nth-child(1) {
+  animation-delay: -0.32s;
+}
+
+.dot:nth-child(2) {
+  animation-delay: -0.16s;
+}
+
+@keyframes dot-blink {
+  0%,
+  80%,
+  100% {
+    opacity: 0;
+  }
+  40% {
+    opacity: 1;
+  }
+}

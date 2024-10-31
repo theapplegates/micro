@@ -1,0 +1,91 @@
+---
+title: Media Queries in CSS
+date: 2024-09-08
+summary: How to make website responsive using CSS media queries
+imageURL: /blog/media-queries-in-css/cover-pic.png
+tags:
+  - CSS
+---
+
+import H2 from "../../components/MDXComponents/H2";
+
+Hi there👋, today i'll explain how to make your website responsive using CSS media queries, so users can have good browsing experience in different devices
+
+Media queries are used to conditionally apply CSS based on the devices width and height, now let's understand the syntax of the media queries, we need to use the **@media** property with width or height condition
+
+Here is an example: <mark>@media (condition)</mark>, now let's see a proper example👇
+
+```css
+/* here i've specified the condition as min-width: 1024px */
+/* the css will apply if the device width is greater than 1024px */
+@media (min-width: 1024px) {
+  .box {
+    background-color: yellow;
+  }
+}
+
+/* similarly there is opposite of min-width which is max-width */
+/* the css will apply if the device width is less than 1024px */
+@media (max-width: 1024px) {
+  .box {
+    background-color: yellow;
+  }
+}
+```
+
+Let's understand with a sandbox example, let's create a square box(🟥) and change it's color based on the device width
+
+```html title="index.html"
+<!-- I'll create a div which is in square shape -->
+<div class="box"></div>
+```
+
+```css title="styles.css"
+/* I did some basic styling */
+/* Initially the color of the box will be red */
+.box {
+  height: 10rem;
+  width: 10rem;
+  background-color: red;
+}
+
+/* If the device width is greater than 768px, the box color will change to blue color */
+/* I took color as an example, you can use the all css properties here */
+@media (min-width: 768px) {
+  .box {
+    background-color: blue;
+  }
+}
+```
+
+<iframe
+  style={{ height: "30rem", borderRadius: "0.5rem" }}
+  width="100%"
+  height="100%"
+  src="https://codepen.io/pavanbhaskardev/embed/QWXYwOv?default-tab=html%2Cresult"
+  loading="lazy"
+  allowtransparency="true"
+  allowFullScreen={true}
+/>
+
+You can use the combination of min-width and max-width and target a set of screen width, here is an example👇
+
+```css
+/* this will apply the CSS overrides devices with width between 768px - 1024px */
+@media (min-width: 768px) and (max-width: 1024px) {
+  /* your CSS overrides */
+}
+```
+
+For more examples you can check [MDN Docs](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_media_queries/Using_media_queries)
+
+<H2>Bonus</H2>
+
+- While developing a website target smaller devices first **phone -> tablet -> laptop -> desktop** this will make your website look good in most of the cases
+- I use these breakpoints for media queries,
+  - 365px (Phone)
+  - 768px (Tablet)
+  - 1024px, 1280px (Laptop)
+  - 1920px (Desktop)
+
+And that's it for this blog, thanks for making it till here, stay tuned for more updates peace✌️

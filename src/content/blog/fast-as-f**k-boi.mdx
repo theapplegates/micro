@@ -1,0 +1,75 @@
+---
+title: Fast as f**k boi🏃‍♂️‍➡️
+date: 2024-10-08
+summary: Image & Video Compression tools to make your website load faster
+imageURL: /blog/fast-as-f**k-boi/cover-pic.avif
+tags:
+  - Performance
+---
+
+import H2 from "../../components/MDXComponents/H2";
+
+Hi there 👋! Recently, I discovered some 💎 gems that can optimize your website's images and videos without compromising quality!
+
+Why Should We Optimize Images? 🤔
+
+> Small image size = ⚡ Faster website load times.
+
+<H2>🏞️ AVIF Format</H2>
+
+If you're already familiar with image compression, you probably know about the WebP format, which is optimized for the web. Recently, I came across the AVIF format, and the results after compression are insane.
+
+There’s a **huge** difference in image size after compression, with **no noticeable loss in quality**. Here are a couple of tools you can use for compression 👇:
+
+**Squoosh Tool**
+
+Squoosh is an open-source image compression tool by Google that supports a lot of formats. You can check it out [here](https://squoosh.app/).
+
+Here are the results of compressing an image:
+
+- **Before compression:** 2.92 MB
+- **After compression:** 190 KB 🔥
+- **Browser support:** 92% (Check it at [Can I use](https://caniuse.com/?search=avif))
+- AVIF format doesn’t support animated image compression (e.g., GIFs).
+
+![Squoosh website](/blog/fast-as-f**k-boi/squoosh.avif)
+
+**Sharp JS**
+
+Sharp is a popular image compression library for JavaScript. Here's an example of how you can compress an image to AVIF format using it:
+
+```javascript title="compress.js"
+import sharp from "sharp";
+import path from "path";
+import process from "process";
+
+const rootDir = process.cwd();
+const inputImagePath = path.join(rootDir, "/images/profile.jpg");
+const outputImagePath = path.join(rootDir, "/images/compressed/profile.avif");
+
+try {
+  const response = await sharp(inputImagePath).avif().toFile(outputImagePath);
+  console.log({ response });
+} catch (error) {
+  console.log({ error });
+}
+```
+
+### 🎥 Handbrake
+
+Handbrake is a video compression tool that I found when trying to embed a video into my company’s website. It compressed a video from 22 MB to **less than 1 MB**—without sacrificing quality!
+
+Handbrake is free, open-source, and available for macOS, Windows, and Linux. You can get it [here](https://handbrake.fr/).
+
+![Handbrake app](/blog/fast-as-f**k-boi/handbrake.avif)
+
+It comes with a lot of features:
+
+- Resizing
+- Web optimization
+
+Give these tools a try! Fun fact: The thumbnail for this blog was generated using ChatGPT.
+
+![chatGPT image generation](/blog/fast-as-f**k-boi/chatgpt.avif)
+
+That’s it for this blog! Thanks for reading. Stay tuned, and peace ✌️!
