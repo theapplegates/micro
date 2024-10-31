@@ -11,7 +11,7 @@ import { transformerNotationHighlight } from "@shikijs/transformers";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://astro-blog.paulapplegate.com",
+  site: "https:/micro.paulapplegate.com",
   integrations: [mdx(), sitemap(), react(), tailwind()],
 
   markdown: {
